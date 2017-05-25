@@ -1,0 +1,25 @@
+Braden Ackles and Alex Wilson
+CS 261
+Assignment 6
+
+Question 1 tea and ate would hash the same with hash1 but not 2
+
+Question 2 It has less chance for concordance so the buckets aren't as filled
+
+Question 3 No the count is the number of different elements and is unefffected by the hash function.
+
+Question 4 No Table load is a function of the counts/tablesize both of which are uneffected by the hash function
+
+Question 5 Yes if there is less concordance there is less empty buckets since elements are spread out more.
+
+Question 6 There could be since changing the table size changes the mod of the hashing which could result in more or less concordance.
+
+Question 7 As table size increases, the performance increases as well. The times below support this.
+   TableSize = 5	Time: 91.71 seconds
+   TableSize = 10	Time: 50.53 seconds
+   TableSize = 15	Time: 43.93 seconds
+   TableSize = 20	Time: 36.24 seconds
+   TableSize = 100	Time: 4.01 seconds
+   
+   When the table size starts small, the chains can be very long, this can cause close to O(n) performance rates. However
+   when the table size increses, the chains become shorter, moving more towards O(1).

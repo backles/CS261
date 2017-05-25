@@ -1,0 +1,7 @@
+Assignment #2 Part 2
+
+1.  For 16 push operations, the cost would be 24.  For 32 push operations, the cost would be 56.  The big O complexity for this push operation would be O(1+).  This is because best case scenario is O(1), and worst case scenario is O(n) for each push, so the average for this type of pattern is O(1+).
+
+2.  For 16 push operations, the cost would be 60.  For 32 push operations, the cost would be around 260 (the math is tedious and pointless).  The big O complexity for this push operation would be O(n), because the average is O(n/2) but that just simplifies to O(n).
+
+3.  To make this specific dynamic array perform poorly (O(n^2)), I would create a 2 capacity array with 1 size, then push so it is 2 size and 2 capacity.  If I then alternate push and pop, the array will resize every time, creating O(n^2).

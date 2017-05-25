@@ -1,0 +1,92 @@
+Pranav Ramesh & Sean Marty
+CS 261-001
+March 11, 2015
+Written Questions
+
+1. Give an example of two words that would hash to the same value
+   using stringHash1() but would not using stringHash2().
+
+   stringHash1() only sums together the values of all of the characters
+   in a given string as order does not matter as such. As long as the 
+   two strings have the same characters that appear the same amount of
+   time in both strings, they would have the same hash. For example,
+   if the words "race" and "care" were entered they would have the same
+   hash in stringHash1(). 
+
+2. Why does the above make stringHash2() superior to stringHash1()?
+
+   stringHash2() is superior because it uses the ASCII table. By doing
+   so, it allows for a different (unique) result which does not happen 
+   when using stringHash1(). So now with words that have the same
+   characters, as described in the example above, will not be stored to
+   the same hash. This is because the ASCII table takes into account of
+   position of the characters.
+
+3. When you run your program on the same input file but one run using
+   stringHash1() and on the other run using stringHash2(). Is it
+   possible for your size() function to return different values?
+
+   Since the size() returns the number of hashlinks in a given table,
+   it should be equivalent to the number of unique keys in that table.
+   Disregarding which hash function is used and what the size of the
+   table is, there should not be any differences in that word set.
+
+4. When you run your program on the same input file using stringHash1()
+   on one run and using stringHash2() on another, is it possible for
+   your tableLoad() function to return different values?
+
+   tableLoad() is a simple function. All it does is returns the number of
+   hashlinks divided by the number of buckets. Either hash function will
+   not have an impact on that outcome because all that matters is the size
+   of the hash table and the number of unique entries that are in the input
+   file, input1.txt.
+
+5. When you run your program on the same input file with one run using
+   stringHash1() and the other run using stringHash2(), is it possible for
+   your emptyBuckets() function to return different values?
+
+   Yes, this is can happen because each of the hash functions assign input
+   keys to different buckets, even when the table size and inputted values
+   are the same.
+
+6. Is there any difference in the number of 'empty buckets' when you change
+   the table size from an even number, like 1000 to a prime like 997?
+
+   Yes, there is a difference. A prime number is better for even distribution
+   than a non prime number because the definition of a prime number is that
+   it is only divisible by 1 and itself. This means that when we hash and then
+   modulo, we won’t get as many “repeat” index results from a prime number.
+
+7. Using the timing code provided to you, run you code on different size 
+   hash tables. How does changing the hash table size affect your 
+   performance? Please show results as a graph for various table sizes. 
+   For this test, remove the "resize" capability of the table. Be sure to 
+   use a large text file. 
+
+   TableSize = 5	Time: 91.62 seconds
+   TableSize = 10	Time: 50.86 seconds
+   TableSize = 15	Time: 43.62 seconds
+   TableSize = 20	Time: 36.55 seconds
+   TableSize = 100	Time: 4.00 seconds
+
+   As the TableSize increases, the performance increases as noted in the
+   data listed above.
+
+   As the tableSize starts small, the chains can be VERY long, causing close
+   to O(n) performance.  As the tableSize increases, the chains become
+   shorter, moving more towards O(1) direct index.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
